@@ -22,7 +22,7 @@ env:
   nodeEnv: production
   peerIdS3Bucket: ipfs-peer-bitswap-config
   peerIdFileName: peerId.json
-  concurrency: '10000'
-  logLevel: 'debug'
+  concurrency: '32'
+  logLevel: info
 workerType: workerNode
 serviceAccountName: bitswap-irsa
