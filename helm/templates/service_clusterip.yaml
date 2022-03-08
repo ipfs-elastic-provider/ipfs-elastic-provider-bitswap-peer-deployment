@@ -13,7 +13,7 @@ spec:
     app: {{ .Release.Name }}
   ports:
   - protocol: TCP
-    name: "http-metrics"
+    name: "http-metrics-disabled"
     port: {{ .Values.service.metricsPort }}
     targetPort: {{ .Values.service.metricsPort }}
 {{- end -}}
