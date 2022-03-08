@@ -24,6 +24,8 @@ spec:
           value: {{ .Values.service.port | squote }} 
         - name: NODE_ENV
           value: {{ .Values.env.nodeEnv }}        
+        - name: LOG_LEVEL
+          value: {{ .Values.env.logLevel }}        
         - name: PEER_ID_S3_BUCKET
           value: {{ .Values.env.peerIdS3Bucket }}
         - name: PEER_ID_FILE
