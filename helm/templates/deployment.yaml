@@ -28,6 +28,8 @@ spec:
           value: {{ .Values.env.peerIdS3Bucket }}
         - name: PEER_ID_FILE
           value: {{ .Values.env.peerIdFileName }}
+        - name: CONCURRENCY
+          value: {{ .Values.env.concurrency }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}

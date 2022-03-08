@@ -1,6 +1,6 @@
 namespace: bitswap-peer
 image:
-  version: "20220308.1147"
+  version: '20220308.1147'
   pullPolicy: Always
 service:
   port: 3000
@@ -22,5 +22,6 @@ env:
   nodeEnv: production
   peerIdS3Bucket: ipfs-peer-bitswap-config
   peerIdFileName: peerId.json
+  concurrency: 10000
 workerType: workerNode
 serviceAccountName: bitswap-irsa
