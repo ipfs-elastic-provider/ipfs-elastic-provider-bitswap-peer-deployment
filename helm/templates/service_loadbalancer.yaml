@@ -10,13 +10,12 @@ spec:
   selector:
     app: {{ .Release.Name }}
   ports:
-  {{ if (.Values.service.metrics.publicEndpoint) and eq .Values.service.metrics.publicEndpoint "true" }}
-  {{ if (.Values.favorite.drink)                 and eq .Values.favorite.drink "coffee" }}
+  {{ if .Values.service.metrics.publicEndpoint }} {{ if eq .Values.service.metrics.publicEndpoint "true" }}
   - protocol: TCP
     name: "public-endpoint-metrics"
     port: {{ .Values.service.metrics.port }}
     targetPort: {{ .Values.service.metrics.port }}
-  {{ end }}
+  {{ end }} {{ end }}
   - protocol: TCP
     name: "ws"
     port: {{ .Values.service.port }}
