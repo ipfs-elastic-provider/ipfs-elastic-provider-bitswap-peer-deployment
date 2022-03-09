@@ -4,7 +4,10 @@ image:
   pullPolicy: Always
 service:
   port: 3000
-  metricsPort: 3001
+  metrics:
+    port: 3001
+    publicEndpoint: "true"
+    enableMonitor: "false"
 resources:
   limits:
     cpu: 1
