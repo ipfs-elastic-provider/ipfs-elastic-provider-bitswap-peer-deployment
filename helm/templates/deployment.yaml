@@ -32,6 +32,8 @@ spec:
           value: {{ .Values.env.peerIdFileName }}
         - name: CONCURRENCY
           value: {{ .Values.env.concurrency | squote }}
+        - name: CACHE_BLOCKS_INFO
+          value: {{ .Values.env.cacheBlocksInfo | squote }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
