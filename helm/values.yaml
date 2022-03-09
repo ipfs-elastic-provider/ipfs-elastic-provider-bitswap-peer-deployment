@@ -1,6 +1,6 @@
 namespace: bitswap-peer
 image:
-  version: "20220309.0936"
+  version: '20220309.0936'
   pullPolicy: Always
 service:
   port: 3000
@@ -14,8 +14,8 @@ resources:
     memory: 512Mi
 autoscaling:
   enabled: true
-  minReplicas: 2
-  maxReplicas: 40
+  minReplicas: 1
+  maxReplicas: 1
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 70
 env:
