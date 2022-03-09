@@ -1,4 +1,4 @@
-namespace: default
+namespace: bitswap-peer
 image:
   version: '20220309.0936'
   pullPolicy: Always
