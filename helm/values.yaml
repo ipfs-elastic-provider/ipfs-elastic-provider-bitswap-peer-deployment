@@ -1,10 +1,13 @@
-namespace: bitswap-peer
+namespace: default
 image:
   version: '20220309.0936'
   pullPolicy: Always
 service:
   port: 3000
-  metricsPort: 3001
+  metrics:
+    port: 3001
+    publicEndpoint: "false"
+    enablePrometheusMonitor: "false"
 resources:
   limits:
     cpu: 1

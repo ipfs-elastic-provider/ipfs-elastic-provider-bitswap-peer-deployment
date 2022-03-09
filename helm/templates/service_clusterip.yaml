@@ -1,4 +1,4 @@
-{{- if .Values.service.metricsPort -}}
+{{- if .Values.service.metrics.port -}}
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
-    metricsMonitor: "true"
+    metricsMonitor: {{ .Values.service.metrics.enablePrometheusMonitor | default "true" | quote }} # When overriding must be a string arg, ex: "false" (Within quotes)
 spec:
   type: ClusterIP
   selector:
@@ -14,6 +14,6 @@ spec:
   ports:
   - protocol: TCP
     name: "http-metrics-disabled"
-    port: {{ .Values.service.metricsPort }}
-    targetPort: {{ .Values.service.metricsPort }}
+    port: {{ .Values.service.metrics.port }}
+    targetPort: {{ .Values.service.metrics.port }}
 {{- end -}}
