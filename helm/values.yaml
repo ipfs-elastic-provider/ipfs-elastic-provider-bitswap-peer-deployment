@@ -1,6 +1,6 @@
 namespace: bitswap-peer
 image:
-  version: "20220314.1041"
+  version: "20220314.1506"
   pullPolicy: Always
 service:
   port: 3000
