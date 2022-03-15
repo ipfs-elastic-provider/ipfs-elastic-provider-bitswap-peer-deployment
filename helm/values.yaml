@@ -11,10 +11,10 @@ service:
 resources:
   limits:
     cpu: 3
-    memory: 6Gi
+    memory: 12Gi
   requests:
     cpu: 2
-    memory: 4Gi
+    memory: 7Gi
 autoscaling:
   enabled: true
   minReplicas: 1
