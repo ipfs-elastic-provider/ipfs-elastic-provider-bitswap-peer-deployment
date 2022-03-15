@@ -25,7 +25,8 @@ env:
   nodeEnv: production
   peerIdS3Bucket: ipfs-peer-bitswap-config
   peerIdFileName: peerId.json
-  concurrency: 32
+  concurrency: 128
+  pipelining: 16
   logLevel: info
   cacheBlocksInfo: false
 workerType: workerNode
