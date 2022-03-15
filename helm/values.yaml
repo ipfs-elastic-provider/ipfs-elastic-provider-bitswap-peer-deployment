@@ -10,11 +10,11 @@ service:
     enableMonitor: "false"
 resources:
   limits:
-    cpu: 1
-    memory: 2Gi
+    cpu: 3
+    memory: 6Gi
   requests:
-    cpu: 0.5
-    memory: 512Mi
+    cpu: 2
+    memory: 4Gi
 autoscaling:
   enabled: true
   minReplicas: 1
