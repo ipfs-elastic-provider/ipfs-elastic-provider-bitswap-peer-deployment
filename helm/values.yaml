@@ -10,8 +10,8 @@ service:
     enableMonitor: "false"
 resources:
   limits:
-    cpu: 4.5
-    memory: 3Gi
+    cpu: 4
+    memory: 2.6Gi
   requests:
     cpu: 3
     memory: 2Gi
