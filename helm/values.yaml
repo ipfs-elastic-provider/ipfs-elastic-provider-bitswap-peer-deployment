@@ -7,7 +7,7 @@ service:
   metrics:
     port: 3001
     publicEndpoint: "true"
-    enableMonitor: "false"
+    enableMonitor: "true"
 resources:
   limits:
     cpu: 4
