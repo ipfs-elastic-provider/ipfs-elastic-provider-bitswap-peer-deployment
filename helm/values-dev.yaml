@@ -1,0 +1,10 @@
+namespace: dev-ep-bitswap-peer
+image:
+  version: "20220513.1754"
+service:
+  metrics:
+    enableMonitor: "false"
+env:
+  nodeEnv: dev
+  peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
+serviceAccountName: dev-ep-bitswap-irsa

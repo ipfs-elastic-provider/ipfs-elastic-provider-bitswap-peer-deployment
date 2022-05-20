@@ -1,0 +1,10 @@
+namespace: staging-ep-bitswap-peer
+image:
+  version: "20220513.1754"
+service:
+  metrics:
+    enableMonitor: "false"
+env:
+  nodeEnv: staging
+  peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
+serviceAccountName: staging-ep-bitswap-irsa
