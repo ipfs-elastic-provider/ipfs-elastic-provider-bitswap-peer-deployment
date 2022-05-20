@@ -1,13 +1,6 @@
 namespace: bitswap-peer
 image:
   version: "20220513.1754"
-  pullPolicy: Always
-service:
-  port: 3000
-  metrics:
-    port: 3001
-    publicEndpoint: "true"
-    enableMonitor: "true"
 resources:
   limits:
     cpu: 4
@@ -19,15 +12,3 @@ autoscaling:
   enabled: true
   minReplicas: 2
   maxReplicas: 40
-  targetCPUUtilizationPercentage: 70
-  targetMemoryUtilizationPercentage: 70
-env:
-  nodeEnv: production
-  peerIdS3Bucket: ipfs-peer-bitswap-config
-  peerIdFileName: peerId.json
-  concurrency: 128
-  pipelining: 16
-  logLevel: info
-  cacheBlocksInfo: false
-workerType: workerNode
-serviceAccountName: bitswap-irsa
