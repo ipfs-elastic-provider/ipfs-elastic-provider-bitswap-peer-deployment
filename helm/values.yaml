@@ -28,5 +28,7 @@ env:
   pipelining: 16
   logLevel: info
   cacheBlocksInfo: false
+  dynamodbBlocksTable: blocks
+  dynamodbCarsTable: blocks
 workerType: workerNode
 serviceAccountName: bitswap-irsa
