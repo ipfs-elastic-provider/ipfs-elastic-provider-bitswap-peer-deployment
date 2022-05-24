@@ -36,6 +36,10 @@ spec:
           value: {{ .Values.env.concurrency | squote }}
         - name: PIPELINING
           value: {{ .Values.env.pipelining | squote }}
+        - name: DYNAMO_BLOCKS_TABLE
+          value: {{ .Values.env.dynamodbBlocksTable | squote }}
+        - name: DYNAMO_CARS_TABLE
+        value: {{ .Values.env.dynamodbCarsTable | squote }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
