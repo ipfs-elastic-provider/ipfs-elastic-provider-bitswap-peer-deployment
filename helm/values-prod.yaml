@@ -10,4 +10,4 @@ resources:
 autoscaling:
   enabled: true
   minReplicas: 4
-  maxReplicas: 40
+  maxReplicas: 300
