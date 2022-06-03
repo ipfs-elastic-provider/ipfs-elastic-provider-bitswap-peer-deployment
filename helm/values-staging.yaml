@@ -1,6 +1,6 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "20220602.1417"
+  version: "20220603.1412"
 service:
   metrics:
     enableMonitor: "false"
