@@ -1,6 +1,6 @@
 namespace: dev-ep-bitswap-peer
 image:
-  version: 20220607.0931-dev
+  version: 20220607.1221-dev
 service:
   metrics:
     enableMonitor: "false"
