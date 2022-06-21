@@ -27,7 +27,7 @@ env:
   concurrency: 128
   pipelining: 16
   logLevel: info
-  cacheBlocksInfo: false
+  cacheBlocksInfo: true
   dynamodbBlocksTable: blocks
   dynamodbCarsTable: cars
 workerType: workerNode
