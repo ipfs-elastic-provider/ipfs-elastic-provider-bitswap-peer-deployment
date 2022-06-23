@@ -47,17 +47,17 @@ spec:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}
             memory: {{ .Values.resources.requests.memory }}
-        {{- if .Values.service.http.enableHealthCheck -}}
+        {{- if .Values.service.http.healthCheck.enable -}}
         livenessProbe:
           httpGet:
             path: /liveness
             port: {{ .Values.service.port | squote }} 
-          initialDelaySeconds: 40
-          periodSeconds: 5
+          initialDelaySeconds: {{ .Values.service.http.healthCheck.liveness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.service.http.healthCheck.liveness.periodSeconds }}
         readinessProbe:
           httpGet:
             path: /readiness
             port: {{ .Values.service.port | squote }} 
-          initialDelaySeconds: 40
-          periodSeconds: 5
+          initialDelaySeconds: {{ .Values.service.http.healthCheck.readiness.initialDelaySeconds }}
+          periodSeconds: {{ .Values.service.http.healthCheck.readiness.periodSeconds }}
       {{- end -}}

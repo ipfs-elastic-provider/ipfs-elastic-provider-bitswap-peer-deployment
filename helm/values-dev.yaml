@@ -4,8 +4,16 @@ image:
 service:
   http:
     port: 3001
-    enableMetricsMonitor: "false"
-    enableHealthCheck: "true"
+    metricsMonitor:
+      enable: "false"
+    healthCheck:
+      enable: "true"
+      liveness: 
+        initialDelaySeconds: 40
+        periodSeconds: 5
+      readiness:
+        initialDelaySeconds: 40
+        periodSeconds: 5
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
