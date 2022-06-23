@@ -1,3 +1,4 @@
+# README: This service only exists while rolling out / promoting Bitswap Peer HTTP Server
 {{- if .Values.service.metrics.port -}}
 apiVersion: v1
 kind: Service
