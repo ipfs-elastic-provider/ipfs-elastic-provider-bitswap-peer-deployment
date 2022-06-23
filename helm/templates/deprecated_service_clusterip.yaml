@@ -1,0 +1,19 @@
+{{- if .Values.service.metrics.port -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-metrics
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Release.Name }}
+    metricsMonitor: {{ .Values.service.metrics.enableMonitor | default "true" | quote }} # When overriding must be a string arg, ex: "false" (Within quotes)
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Release.Name }}
+  ports:
+  - protocol: TCP
+    name: "http-metrics"
+    port: {{ .Values.service.metrics.port }}
+    targetPort: {{ .Values.service.metrics.port }}
+{{- end -}}

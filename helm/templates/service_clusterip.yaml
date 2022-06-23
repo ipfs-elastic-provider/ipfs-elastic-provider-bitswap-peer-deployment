@@ -1,19 +1,19 @@
-{{- if .Values.service.metrics.port -}}
+{{- if .Values.service.http.port -}}
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}-metrics
+  name: {{ .Release.Name }}-http
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
-    metricsMonitor: {{ .Values.service.metrics.enableMonitor | default "true" | quote }} # When overriding must be a string arg, ex: "false" (Within quotes)
+    metricsMonitor: {{ .Values.service.http.enableMetricsMonitor | default "true" | quote }} # When overriding must be a string arg, ex: "false" (Within quotes)
 spec:
   type: ClusterIP
   selector:
     app: {{ .Release.Name }}
   ports:
   - protocol: TCP
-    name: "http-metrics"
-    port: {{ .Values.service.metrics.port }}
-    targetPort: {{ .Values.service.metrics.port }}
+    name: "http"
+    port: {{ .Values.service.http.port }}
+    targetPort: {{ .Values.service.http.port }}
 {{- end -}}

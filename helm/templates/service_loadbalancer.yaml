@@ -12,7 +12,7 @@ spec:
   ports:
   {{ if .Values.service.metrics.publicEndpoint }} {{ if eq .Values.service.metrics.publicEndpoint "true" }}
   - protocol: TCP
-    name: "public-endpoint-metrics"
+    name: "public-http-endpoint"
     port: {{ .Values.service.metrics.port }}
     targetPort: {{ .Values.service.metrics.port }}
   {{ end }} {{ end }}
