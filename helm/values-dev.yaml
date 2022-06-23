@@ -5,6 +5,7 @@ service:
   http:
     port: 3001
     enableMetricsMonitor: "false"
+    enableHealthCheck: "true"
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config

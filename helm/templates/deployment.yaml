@@ -47,3 +47,17 @@ spec:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}
             memory: {{ .Values.resources.requests.memory }}
+        {{- if .Values.service.http.enableHealthCheck -}}
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: {{ .Values.service.port | squote }} 
+          initialDelaySeconds: 40
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: {{ .Values.service.port | squote }} 
+          initialDelaySeconds: 40
+          periodSeconds: 5
+      {{- end -}}
