@@ -1,9 +1,5 @@
 image:
   version: "20220624.1201"
-service:
-  metrics:
-    port: 3001
-    enableMonitor: "true"
 resources:
   limits:
     cpu: 4

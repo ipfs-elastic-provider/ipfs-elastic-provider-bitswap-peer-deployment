@@ -2,8 +2,11 @@ namespace: dev-ep-bitswap-peer
 image:
   version: 20220623.1310-dev
 service:
-  metrics:
-    enableMonitor: "false"
+  http:
+    metricsMonitor:
+      enable: false
+    healthCheck:
+      enable: false
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
