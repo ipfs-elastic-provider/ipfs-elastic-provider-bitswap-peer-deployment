@@ -13,8 +13,6 @@ spec:
     name: {{ .Release.Name }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}
-  # targetMemoryUtilizationPercentage: {{ .Values.autoscaling.targetMemoryUtilizationPercentage}}
-  # targetCPUUtilizationPercentage: {{ .Values.autoscaling.targetCPUUtilizationPercentage}}
   metrics:
   - type: Resource
     resource:
