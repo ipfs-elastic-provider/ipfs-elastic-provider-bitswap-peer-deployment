@@ -51,13 +51,13 @@ spec:
         livenessProbe:
           httpGet:
             path: /liveness
-            port: {{ .Values.service.port | squote }} 
+            port: {{ .Values.service.http.port }} 
           initialDelaySeconds: {{ .Values.service.http.healthCheck.liveness.initialDelaySeconds }}
           periodSeconds: {{ .Values.service.http.healthCheck.liveness.periodSeconds }}
         readinessProbe:
           httpGet:
             path: /readiness
-            port: {{ .Values.service.port | squote }} 
+            port: {{ .Values.service.http.port }} 
           initialDelaySeconds: {{ .Values.service.http.healthCheck.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.service.http.healthCheck.readiness.periodSeconds }}
         {{ end -}}
