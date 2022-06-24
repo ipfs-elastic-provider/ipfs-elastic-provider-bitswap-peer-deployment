@@ -1,22 +1,8 @@
-namespace: dev-ep-bitswap-peer
 image:
   version: 20220623.1310-dev
 service:
-  http:
-    port: 3001
-    metricsMonitor:
-      enable: "false"
-    healthCheck:
-      enable: "true"
-      liveness: 
-        initialDelaySeconds: 40
-        periodSeconds: 5
-      readiness:
-        initialDelaySeconds: 40
-        periodSeconds: 5
+  metrics:
+    enableMonitor: "false"
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
-  dynamodbBlocksTable: dev-ep-blocks
-  dynamodbCarsTable: dev-ep-cars
-serviceAccountName: dev-ep-bitswap-irsa
