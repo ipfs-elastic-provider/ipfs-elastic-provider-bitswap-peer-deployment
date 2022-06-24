@@ -1,3 +1,4 @@
+namespace: dev-ep-bitswap-peer
 image:
   version: 20220623.1310-dev
 service:
@@ -6,3 +7,6 @@ service:
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
+  dynamodbBlocksTable: dev-ep-blocks
+  dynamodbCarsTable: dev-ep-cars
+serviceAccountName: dev-ep-bitswap-irsa
