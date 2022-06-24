@@ -6,7 +6,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
-    metricsMonitor: {{ .Values.service.http.metricsMonitor.enable | default "true" | quote }} # When overriding must be a string arg, ex: "false" (Within quotes)
+    metricsMonitor: {{ (.Values.service.http.metricsMonitor.enable | quote ) | default "true" }}
 spec:
   type: ClusterIP
   selector:

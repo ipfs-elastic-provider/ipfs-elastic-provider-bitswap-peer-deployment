@@ -1,19 +1,6 @@
 namespace: staging-ep-bitswap-peer
 image:
   version: "20220624.1201"
-service:
-  http:
-    port: 3001
-    metricsMonitor:
-      enable: "false"
-    healthCheck:
-      enable: "true"
-      liveness: 
-        initialDelaySeconds: 40
-        periodSeconds: 5
-      readiness:
-        initialDelaySeconds: 40
-        periodSeconds: 5
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
