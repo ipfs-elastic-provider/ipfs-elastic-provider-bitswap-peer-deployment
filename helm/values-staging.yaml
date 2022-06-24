@@ -1,6 +1,6 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "20220530.1815"
+  version: "20220624.1201"
 service:
   http:
     port: 3001
