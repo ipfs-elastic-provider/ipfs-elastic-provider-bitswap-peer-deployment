@@ -47,7 +47,7 @@ spec:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}
             memory: {{ .Values.resources.requests.memory }}
-        {{- if (((.Values.service.http).healthCheck).enable) -}}
+        {{ if (((.Values.service.http).healthCheck).enable) -}}
         livenessProbe:
           httpGet:
             path: /liveness
@@ -60,4 +60,4 @@ spec:
             port: {{ .Values.service.port | squote }} 
           initialDelaySeconds: {{ .Values.service.http.healthCheck.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.service.http.healthCheck.readiness.periodSeconds }}
-      {{- end -}}
+        {{ end -}}
