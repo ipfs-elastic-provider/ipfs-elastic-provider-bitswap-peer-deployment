@@ -30,6 +30,8 @@ spec:
           value: {{ .Values.env.peerIdS3Bucket }}
         - name: PEER_ID_FILE
           value: {{ .Values.env.peerIdFileName }}
+        - name: PEER_ANNOUNCE_ADDR
+          value: {{ .Values.env.peerAnnounceAddr | squote }}
         - name: CACHE_BLOCKS_INFO
           value: {{ .Values.env.cacheBlocksInfo | squote }}
         - name: CONCURRENCY

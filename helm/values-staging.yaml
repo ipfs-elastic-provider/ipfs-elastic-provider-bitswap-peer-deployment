@@ -4,6 +4,7 @@ image:
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
+  peerAnnounceAddr: /dns4/staging.peer.ipfs-elastic-provider-aws.com/tcp/3000/ws
   dynamodbBlocksTable: staging-ep-blocks
   dynamodbCarsTable: staging-ep-cars
 serviceAccountName: staging-ep-bitswap-irsa
