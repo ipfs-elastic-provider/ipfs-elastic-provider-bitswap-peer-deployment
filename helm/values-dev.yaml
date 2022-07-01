@@ -2,6 +2,9 @@ namespace: dev-ep-bitswap-peer
 image:
   version: 20220623.1310-dev
 service:
+  awsLoadBalancerSSLCert: arnsecret
+  sslPort: 3443
+  targetPort: 3000
   http:
     metricsMonitor:
       enable: false
