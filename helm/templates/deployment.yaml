@@ -21,7 +21,7 @@ spec:
         name: {{ .Release.Name }}        
         env: 
         - name: PORT
-          value: {{ .Values.service.port | squote }} 
+          value: {{- if .Values.service.targetPort }} {{ .Values.service.targetPort | squote }} {{- else }} {{ .Values.service.port | squote }} {{- end }}
         - name: NODE_ENV
           value: {{ .Values.env.nodeEnv }}        
         - name: LOG_LEVEL

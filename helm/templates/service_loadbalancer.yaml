@@ -24,4 +24,4 @@ spec:
   - protocol: TCP
     name: "ws"
     port: {{ .Values.service.port }}
-    targetPort: {{ if .Values.service.targetPort -}} {{ .Values.service.targetPort }} {{ else -}} {{ .Values.service.port }} {{ end -}}
+    targetPort: {{- if .Values.service.targetPort }} {{ .Values.service.targetPort }} {{- else }} {{ .Values.service.port }} {{- end }}
