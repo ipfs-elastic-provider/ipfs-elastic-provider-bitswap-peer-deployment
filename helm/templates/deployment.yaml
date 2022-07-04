@@ -40,15 +40,15 @@ spec:
           value: {{ .Values.env.dynamodbBlocksTable | squote }}
         - name: DYNAMO_CARS_TABLE
           value: {{ .Values.env.dynamodbCarsTable | squote }}
-        {{ if .Values.dynamodbBlocksTableV1 -}}
+        {{ if ((.Values.env).dynamodbBlocksTableV1) -}}
         - name: DYNAMO_BLOCKS_TABLE_V1
           value: {{ .Values.env.dynamodbBlocksTableV1 | squote }}
         {{ end -}}
-        {{ if .Values.dynamodbCarsTableV1 -}}
+        {{ if ((.Values.env).dynamodbCarsTableV1) -}}
         - name: DYNAMO_CARS_TABLE_V1
           value: {{ .Values.env.dynamodbCarsTableV1 | squote }}
         {{ end -}}
-        {{ if .Values.dynamodbLinkTableV1 -}}
+        {{ if ((.Values.env).dynamodbLinkTableV1) -}}
         - name: DYNAMO_LINK_TABLE_V1
           value: {{ .Values.env.dynamodbLinkTableV1 | squote }}
         {{ end -}}
