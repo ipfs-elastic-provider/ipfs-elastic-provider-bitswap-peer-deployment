@@ -6,4 +6,7 @@ env:
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
   dynamodbBlocksTable: staging-ep-blocks
   dynamodbCarsTable: staging-ep-cars
+  dynamodbBlocksTableV1: staging-ep-v1-blocks
+  dynamodbCarsTableV1: staging-ep-v1-cars
+  dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
 serviceAccountName: staging-ep-bitswap-irsa
