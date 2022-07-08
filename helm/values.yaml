@@ -33,6 +33,7 @@ env:
   nodeEnv: production
   peerIdS3Bucket: ipfs-peer-bitswap-config
   peerIdFileName: peerId.json
+  peerAnnounceAddr: /dns4/peer.ipfs-elastic-provider-aws.com/tcp/3000/ws
   concurrency: 128
   pipelining: 16
   logLevel: info
