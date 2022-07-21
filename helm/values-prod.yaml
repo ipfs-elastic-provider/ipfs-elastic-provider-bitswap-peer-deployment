@@ -3,7 +3,7 @@ image:
 resources:
   limits:
     cpu: 2
-    memory: 3Gi
+    memory: 3.5Gi
   requests:
     cpu: 2
     memory: 3Gi
