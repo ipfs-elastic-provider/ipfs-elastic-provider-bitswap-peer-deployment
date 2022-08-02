@@ -17,6 +17,10 @@ spec:
     targetPort: {{ .Values.service.metrics.port }}
   {{ end }} {{ end -}}
   - protocol: TCP
+    name: "ws-deprecated"
+    port: {{ .Values.service.deprecatedPort }}
+    targetPort: {{ .Values.service.deprecatedPort }}
+  - protocol: TCP
     name: "ws"
     port: {{ .Values.service.port }}
-    targetPort: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
