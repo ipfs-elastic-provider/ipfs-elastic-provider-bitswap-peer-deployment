@@ -21,8 +21,12 @@ spec:
     port: {{ .Values.service.metrics.port }}
     targetPort: {{ .Values.service.metrics.port }}
   {{ end }} {{ end -}}
-  - protocol: TCP
-    name: "ws"
+  - name: "ws-deprecated"
+    protocol: TCP
+    port: {{ .Values.service.deprecatedPort }}
+    targetPort: {{ .Values.service.deprecatedPort }}
+  - name: "ws"
+    protocol: TCP
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetPort }}
  {{ if and .Values.service.awsLoadBalancerSSLCert .Values.service.sslPort .Values.service.targetPort -}}
