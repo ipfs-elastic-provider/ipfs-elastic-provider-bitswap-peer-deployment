@@ -17,11 +17,11 @@ spec:
     spec:
       serviceAccountName: {{ .Values.serviceAccountName }}
       containers:
-      - image: ghcr.io/ipfs-elastic-provider/ipfs-elastic-provider-bitswap-peer/app:{{ .Values.image.version }}
+      - image: ghcr.io/elastic-ipfs/bitswap-peer/app:{{ .Values.image.version }}
         name: {{ .Release.Name }}        
         env: 
         - name: PORT
-          value: {{- if .Values.service.targetPort }} {{ .Values.service.targetPort | squote }} {{- else }} {{ .Values.service.port | squote }} {{- end }}
+          value: {{ .Values.service.port | squote }} 
         - name: NODE_ENV
           value: {{ .Values.env.nodeEnv }}        
         - name: LOG_LEVEL
@@ -40,6 +40,18 @@ spec:
           value: {{ .Values.env.dynamodbBlocksTable | squote }}
         - name: DYNAMO_CARS_TABLE
           value: {{ .Values.env.dynamodbCarsTable | squote }}
+        {{ if ((.Values.env).dynamodbBlocksTableV1) -}}
+        - name: DYNAMO_BLOCKS_TABLE_V1
+          value: {{ .Values.env.dynamodbBlocksTableV1 | squote }}
+        {{ end -}}
+        {{ if ((.Values.env).dynamodbCarsTableV1) -}}
+        - name: DYNAMO_CARS_TABLE_V1
+          value: {{ .Values.env.dynamodbCarsTableV1 | squote }}
+        {{ end -}}
+        {{ if ((.Values.env).dynamodbLinkTableV1) -}}
+        - name: DYNAMO_LINK_TABLE_V1
+          value: {{ .Values.env.dynamodbLinkTableV1 | squote }}
+        {{ end -}}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}

@@ -21,13 +21,11 @@ spec:
     port: {{ .Values.service.metrics.port }}
     targetPort: {{ .Values.service.metrics.port }}
   {{ end }} {{ end -}}
-  {{ if .Values.service.port -}}
-  - name: "ws" 
-    protocol: TCP
+  - protocol: TCP
+    name: "ws"
     port: {{ .Values.service.port }}
-    targetPort: {{- if .Values.service.targetPort }} {{ .Values.service.targetPort }} {{- else }} {{ .Values.service.port }} {{- end }}
-  {{ end -}}
-  {{ if and .Values.service.awsLoadBalancerSSLCert .Values.service.sslPort .Values.service.targetPort -}}
+    targetPort: {{ .Values.service.targetPort }}
+ {{ if and .Values.service.awsLoadBalancerSSLCert .Values.service.sslPort .Values.service.targetPort -}}
   - name: "wss"
     protocol: TCP
     port: {{ .Values.service.sslPort }}

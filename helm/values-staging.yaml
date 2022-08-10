@@ -1,9 +1,12 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "20220630.1511"
+  version: "20220810.1400"
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
   dynamodbBlocksTable: staging-ep-blocks
   dynamodbCarsTable: staging-ep-cars
+  dynamodbBlocksTableV1: staging-ep-v1-blocks
+  dynamodbCarsTableV1: staging-ep-v1-cars
+  dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
 serviceAccountName: staging-ep-bitswap-irsa
