@@ -15,11 +15,11 @@ spec:
   selector:
     app: {{ .Release.Name }}
   ports:
-  {{ if ((.Values.service.metrics).publicEndpoint) -}} {{ if eq ((.Values.service.metrics).publicEndpoint) "true" }}
+  {{ if ((.Values.service.http).publicEndpoint) -}} {{ if eq ((.Values.service.http).publicEndpoint) "true" }}
   - name: "public-http-endpoint"
     protocol: TCP    
-    port: {{ .Values.service.metrics.port }}
-    targetPort: {{ .Values.service.metrics.port }}
+    port: {{ .Values.service.http.port }}
+    targetPort: {{ .Values.service.http.port }}
   {{ end }} {{ end -}}
   - name: "ws-deprecated"
     protocol: TCP
