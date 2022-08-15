@@ -1,5 +1,4 @@
 
-namespace: staging-ep-bitswap-peer
 image:
   version: "20220812.0910"
 env:

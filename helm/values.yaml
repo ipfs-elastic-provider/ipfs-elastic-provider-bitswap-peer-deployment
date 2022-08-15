@@ -1,4 +1,4 @@
-namespace: bitswap-peer
+namespace: _argoCDParameterOverride
 image:
   version: "latest"
   pullPolicy: Always
