@@ -1,5 +1,5 @@
 image:
-  version: 20220728.1619-dev
+  version: 20220811.1357-dev
 service:
   http:
     metricsMonitor:
