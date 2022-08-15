@@ -9,7 +9,7 @@ metadata:
     annotations:
       service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.service.awsCertificateArn }}
       service.beta.kubernetes.io/aws-load-balancer-ssl-ports: wss
-    {{ end -}}
+    {{- end }}
 spec:
   type: LoadBalancer
   selector:
@@ -17,7 +17,7 @@ spec:
   ports:
   {{ if ((.Values.service.http).publicEndpoint) -}} {{ if eq ((.Values.service.http).publicEndpoint) "true" }}
   - name: "public-http-endpoint"
-    protocol: TCP    
+    protocol: TCP
     port: {{ .Values.service.http.port }}
     targetPort: {{ .Values.service.http.port }}
   {{ end }} {{ end -}}
@@ -29,7 +29,7 @@ spec:
     protocol: TCP
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetPort }}
- {{ if and .Values.service.awsCertificateArn .Values.service.sslPort .Values.service.targetPort -}}
+  {{ if and .Values.service.awsCertificateArn .Values.service.sslPort .Values.service.targetPort -}}
   - name: "wss"
     protocol: TCP
     port: {{ .Values.service.sslPort }}
