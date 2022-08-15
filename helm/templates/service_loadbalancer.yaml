@@ -5,22 +5,33 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
+  {{ if and .Values.service.awsCertificateArn .Values.service.sslPort -}}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.service.awsCertificateArn }}
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: wss
+  {{- end }}
 spec:
   type: LoadBalancer
   selector:
     app: {{ .Release.Name }}
   ports:
-  {{ if ((.Values.service.metrics).publicEndpoint) -}} {{ if eq ((.Values.service.metrics).publicEndpoint) "true" }}
-  - protocol: TCP
-    name: "public-http-endpoint"
-    port: {{ .Values.service.metrics.port }}
-    targetPort: {{ .Values.service.metrics.port }}
+  {{ if ((.Values.service.http).publicEndpoint) -}} {{ if eq ((.Values.service.http).publicEndpoint) "true" }}
+  - name: "public-http-endpoint"
+    protocol: TCP
+    port: {{ .Values.service.http.port }}
+    targetPort: {{ .Values.service.http.port }}
   {{ end }} {{ end -}}
-  - protocol: TCP
-    name: "ws-deprecated"
+  - name: "ws-deprecated"
+    protocol: TCP
     port: {{ .Values.service.deprecatedPort }}
     targetPort: {{ .Values.service.deprecatedPort }}
-  - protocol: TCP
-    name: "ws"
+  - name: "ws"
+    protocol: TCP
     port: {{ .Values.service.port }}
     targetPort: {{ .Values.service.targetPort }}
+  {{ if and .Values.service.awsCertificateArn .Values.service.sslPort .Values.service.targetPort -}}
+  - name: "wss"
+    protocol: TCP
+    port: {{ .Values.service.sslPort }}
+    targetPort: {{ .Values.service.targetPort }}
+  {{ end -}}
