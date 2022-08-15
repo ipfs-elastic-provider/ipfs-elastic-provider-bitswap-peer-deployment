@@ -5,11 +5,11 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
-    {{ if and .Values.service.awsCertificateArn .Values.service.sslPort -}}
-    annotations:
-      service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.service.awsCertificateArn }}
-      service.beta.kubernetes.io/aws-load-balancer-ssl-ports: wss
-    {{- end }}
+  {{ if and .Values.service.awsCertificateArn .Values.service.sslPort -}}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.service.awsCertificateArn }}
+    service.beta.kubernetes.io/aws-load-balancer-ssl-ports: wss
+  {{- end }}
 spec:
   type: LoadBalancer
   selector:
