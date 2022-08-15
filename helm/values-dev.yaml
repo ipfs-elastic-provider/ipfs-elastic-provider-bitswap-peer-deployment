@@ -1,3 +1,4 @@
+namespace: dev-ep-bitswap-peer
 image:
   version: 20220811.1357-dev
 service:
