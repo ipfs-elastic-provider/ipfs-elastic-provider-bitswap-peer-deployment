@@ -38,7 +38,8 @@ env:
   concurrency: 128
   pipelining: 16
   logLevel: info
-  cacheBlocksInfo: true
+  cacheBlockData: true
+  cacheBlockInfo: true
   dynamodbBlocksTable: blocks
   dynamodbCarsTable: cars
   dynamodbBlocksTableV1: prod-ep-v1-blocks
