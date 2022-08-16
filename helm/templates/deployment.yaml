@@ -30,8 +30,12 @@ spec:
           value: {{ .Values.env.peerIdS3Bucket }}
         - name: PEER_ID_FILE
           value: {{ .Values.env.peerIdFileName }}
-        - name: CACHE_BLOCKS_INFO
+        - name: CACHE_BLOCKS_INFO # TODO: Remove after testing cacheBlockInfo var
           value: {{ .Values.env.cacheBlocksInfo | squote }}
+        - name: CACHE_BLOCK_DATA
+          value: {{ .Values.env.cacheBlockData | squote }}
+        - name: CACHE_BLOCK_INFO
+          value: {{ .Values.env.cacheBlockInfo | squote }}
         - name: CONCURRENCY
           value: {{ .Values.env.concurrency | squote }}
         - name: PIPELINING
