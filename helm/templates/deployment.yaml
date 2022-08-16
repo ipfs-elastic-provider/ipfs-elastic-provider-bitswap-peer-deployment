@@ -30,8 +30,6 @@ spec:
           value: {{ .Values.env.peerIdS3Bucket }}
         - name: PEER_ID_FILE
           value: {{ .Values.env.peerIdFileName }}
-        - name: CACHE_BLOCKS_INFO # TODO: Remove after testing cacheBlockInfo var
-          value: {{ .Values.env.cacheBlocksInfo | squote }}
         - name: CACHE_BLOCK_DATA
           value: {{ .Values.env.cacheBlockData | squote }}
         - name: CACHE_BLOCK_INFO
