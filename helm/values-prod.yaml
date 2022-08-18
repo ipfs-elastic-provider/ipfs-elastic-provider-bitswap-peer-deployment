@@ -1,5 +1,5 @@
 image:
-  version: "20220817.1500"
+  version: "20220818.0805"
 resources:
   limits:
     cpu: 2
