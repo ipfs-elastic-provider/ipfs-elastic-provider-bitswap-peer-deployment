@@ -2,14 +2,14 @@ image:
   version: "20220823.1524"
 resources:
   limits:
-    cpu: 2
-    memory: 3.5Gi
+    cpu: 4
+    memory: 7Gi
   requests:
-    cpu: 2
-    memory: 3Gi
+    cpu: 4
+    memory: 6Gi
 autoscaling:
   enabled: true
-  minReplicas: 4
+  minReplicas: 10
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
