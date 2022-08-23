@@ -15,10 +15,10 @@ service:
     healthCheck:
       enable: "true"
       liveness: 
-        initialDelaySeconds: 40
+        initialDelaySeconds: 15
         periodSeconds: 5
       readiness:
-        initialDelaySeconds: 40
+        initialDelaySeconds: 15
         periodSeconds: 5
 resources:
   limits:
