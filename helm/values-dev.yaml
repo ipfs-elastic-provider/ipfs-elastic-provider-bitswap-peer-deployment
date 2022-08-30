@@ -1,6 +1,6 @@
 namespace: dev-ep-bitswap-peer
 image:
-  version: 20220623.1310-dev
+  version: 20220825.0804-dev
 service:
   http:
     metricsMonitor:
@@ -13,4 +13,7 @@ env:
   peerAnnounceAddr: /dns4/dev.peer.ipfs-elastic-provider-aws.com/tcp/3000/ws
   dynamodbBlocksTable: dev-ep-blocks
   dynamodbCarsTable: dev-ep-cars
+  dynamodbBlocksTableV1: dev-ep-v1-blocks
+  dynamodbCarsTableV1: dev-ep-v1-cars
+  dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
 serviceAccountName: dev-ep-bitswap-irsa
