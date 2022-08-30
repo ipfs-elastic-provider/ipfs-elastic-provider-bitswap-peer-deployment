@@ -10,7 +10,7 @@ service:
 env:
   nodeEnv: dev
   peerIdS3Bucket: us-west-2-dev-ep-bitswap-config
-  peerAnnounceAddr: /dns4/dev.peer.ipfs-elastic-provider-aws.com/tcp/3000/ws
+  peerAnnounceAddr: /dns4/elastic-dev.dag.house/tcp/443/wss
   dynamodbBlocksTable: dev-ep-blocks
   dynamodbCarsTable: dev-ep-cars
   dynamodbBlocksTableV1: dev-ep-v1-blocks
