@@ -17,3 +17,5 @@ env:
   dynamodbCarsTableV1: dev-ep-v1-cars
   dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
 serviceAccountName: dev-ep-bitswap-irsa
+autoscaling:
+  enabled: false
