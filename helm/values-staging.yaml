@@ -1,6 +1,6 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "20220929.1736"
+  version: "20220929.1737"
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
