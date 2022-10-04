@@ -20,6 +20,7 @@ service:
       readiness:
         initialDelaySeconds: 15
         periodSeconds: 5
+annotations: {}
 resources:
   limits:
     cpu: 2

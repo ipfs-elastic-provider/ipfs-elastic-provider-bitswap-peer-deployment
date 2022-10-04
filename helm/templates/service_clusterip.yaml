@@ -7,6 +7,8 @@ metadata:
   labels:
     app: {{ .Release.Name }}
     metricsMonitor: {{ (.Values.service.http.metricsMonitor.enable | quote ) | default "true" }}
+  annotations:
+{{ toYaml .Values.annotations | indent 4 }}
 spec:
   type: ClusterIP
   selector:
