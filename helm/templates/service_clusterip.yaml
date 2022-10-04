@@ -8,9 +8,7 @@ metadata:
     app: {{ .Release.Name }}
     metricsMonitor: {{ (.Values.service.http.metricsMonitor.enable | quote ) | default "true" }}
   annotations:
-    prometheus.io/path: "metrics"
-    prometheus.io/port: "3001"
-    prometheus.io/scrape: "true"
+{{ toYaml .Values.annotations | indent 4 }}
 spec:
   type: ClusterIP
   selector:

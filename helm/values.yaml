@@ -20,6 +20,10 @@ service:
       readiness:
         initialDelaySeconds: 15
         periodSeconds: 5
+annotations:
+  prometheus.io/path: "metrics"
+  prometheus.io/port: "3001"
+  prometheus.io/scrape: "true"
 resources:
   limits:
     cpu: 2
