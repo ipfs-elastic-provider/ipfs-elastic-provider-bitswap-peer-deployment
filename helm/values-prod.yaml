@@ -13,18 +13,3 @@ autoscaling:
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
-env:
-  logLevel: debug
-  nodeEnv: production
-  peerIdS3Bucket: ipfs-peer-bitswap-config
-  peerIdFileName: peerId.json
-  peerAnnounceAddr: /dns4/elastic.dag.house/tcp/443/wss
-  concurrency: 128
-  pipelining: 16
-  cacheBlockData: false
-  cacheBlockInfo: false
-  dynamodbBlocksTable: blocks
-  dynamodbCarsTable: cars
-  dynamodbBlocksTableV1: prod-ep-v1-blocks
-  dynamodbCarsTableV1: prod-ep-v1-cars
-  dynamodbLinkTableV1: prod-ep-v1-blocks-cars-position
