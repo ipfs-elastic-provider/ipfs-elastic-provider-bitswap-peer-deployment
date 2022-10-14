@@ -13,3 +13,5 @@ autoscaling:
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
+env:
+  logLevel: debug
