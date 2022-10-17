@@ -1,6 +1,6 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "20221014.1429"
+  version: "20221017.1404"
 annotations:
   prometheus.io/path: metrics
   prometheus.io/port: "3001"
