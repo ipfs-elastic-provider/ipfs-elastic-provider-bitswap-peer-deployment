@@ -1,5 +1,9 @@
 apiVersion: apps/v1
+{{ if (.Values.alpha).rollout -}}
+kind: Rollout
+{{ else -}}
 kind: Deployment
+{{ end -}}
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Values.namespace }}
