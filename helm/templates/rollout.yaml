@@ -1,7 +1,8 @@
-apiVersion: apps/v1
 {{ if (.Values.alpha).rollout -}}
+apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 {{ else -}}
+apiVersion: apps/v1
 kind: Deployment
 {{ end -}}
 metadata:
