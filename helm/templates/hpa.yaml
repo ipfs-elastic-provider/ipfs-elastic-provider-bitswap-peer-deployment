@@ -8,8 +8,8 @@ metadata:
     app: {{ .Release.Name }}
 spec:
   scaleTargetRef:
-    {{ if (.Values.alpha).rollout -}}
-    apiVersion: argoproj.io/v1alpha1
+    {{ if (.Values.beta).rollout -}}
+    apiVersion: argoproj.io/v1beta1
     kind: Rollout
     {{ else -}}
     apiVersion: apps/v1

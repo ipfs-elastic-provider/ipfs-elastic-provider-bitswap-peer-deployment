@@ -15,7 +15,7 @@ env:
   dynamodbCarsTableV1: staging-ep-v1-cars
   dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
 serviceAccountName: staging-ep-bitswap-irsa
-alpha:
+beta:
   rollout:
     strategy:
       canary:
