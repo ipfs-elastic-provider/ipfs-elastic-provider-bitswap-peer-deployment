@@ -11,6 +11,11 @@ metadata:
   labels:
     app: {{ .Release.Name }}
 spec:
+  {{ if ((.Values.alpha).rollout).strategy -}}
+    strategy:
+{{ toYaml .Values.alpha.rollout.strategy | indent 4 }}
+  {{ end -}}
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: {{ .Release.Name }}
