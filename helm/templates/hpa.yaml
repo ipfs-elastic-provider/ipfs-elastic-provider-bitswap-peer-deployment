@@ -1,5 +1,5 @@
 {{- if .Values.autoscaling.enabled }}
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ .Release.Name }}-hpa
@@ -8,8 +8,13 @@ metadata:
     app: {{ .Release.Name }}
 spec:
   scaleTargetRef:
+    {{ if (.Values.beta).rollout -}}
+    apiVersion: argoproj.io/v1beta1
+    kind: Rollout
+    {{ else -}}
     apiVersion: apps/v1
     kind: Deployment
+    {{ end -}}
     name: {{ .Release.Name }}
   minReplicas: {{ .Values.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.autoscaling.maxReplicas }}

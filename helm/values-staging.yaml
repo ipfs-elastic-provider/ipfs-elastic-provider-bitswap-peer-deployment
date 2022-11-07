@@ -15,3 +15,16 @@ env:
   dynamodbCarsTableV1: staging-ep-v1-cars
   dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
 serviceAccountName: staging-ep-bitswap-irsa
+beta:
+  rollout:
+    strategy:
+      canary:
+        steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 40
+        - pause: {duration: 10}
+        - setWeight: 60
+        - pause: {duration: 10}
+        - setWeight: 80
+        - pause: {duration: 10}

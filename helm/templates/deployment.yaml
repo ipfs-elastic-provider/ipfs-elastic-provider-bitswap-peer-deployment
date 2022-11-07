@@ -1,11 +1,21 @@
+{{ if (.Values.beta).rollout -}}
+apiVersion: argoproj.io/v1beta1
+kind: Rollout
+{{ else -}}
 apiVersion: apps/v1
 kind: Deployment
+{{ end -}}
 metadata:
   name: {{ .Release.Name }}
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Release.Name }}
 spec:
+  {{ if ((.Values.beta).rollout).strategy -}}
+    strategy:
+{{ toYaml .Values.beta.rollout.strategy | indent 4 }}
+  {{ end -}}
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: {{ .Release.Name }}
