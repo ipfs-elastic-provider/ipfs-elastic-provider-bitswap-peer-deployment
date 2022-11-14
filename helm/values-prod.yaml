@@ -1,5 +1,5 @@
 image:
-  version: "20221017.1404"
+  version: '20221017.1404'
 resources:
   limits:
     cpu: 4
@@ -13,3 +13,15 @@ autoscaling:
   maxReplicas: 20
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
+rollout:
+  strategy:
+    canary:
+      steps:
+        - setWeight: 20
+        - pause: {}
+        - setWeight: 40
+        - pause: { duration: 10 }
+        - setWeight: 60
+        - pause: { duration: 10 }
+        - setWeight: 80
+        - pause: { duration: 10 }
