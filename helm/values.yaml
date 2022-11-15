@@ -39,8 +39,8 @@ env:
   peerIdS3Bucket: ipfs-peer-bitswap-config
   peerIdFileName: peerId.json
   peerAnnounceAddr: /dns4/elastic.dag.house/tcp/443/wss
-  concurrency: 128
-  pipelining: 16
+  awsClientConcurrency: 128
+  awsClientPipelining: 8
   logLevel: info
   cacheBlockData: false
   cacheBlockInfo: false
