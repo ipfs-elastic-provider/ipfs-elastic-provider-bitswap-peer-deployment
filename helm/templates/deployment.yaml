@@ -1,4 +1,4 @@
-{{ if (.Values.beta).rollout -}}
+{{ if (.Values).rollout -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 {{ else -}}
@@ -11,9 +11,9 @@ metadata:
   labels:
     app: {{ .Release.Name }}
 spec:
-  {{ if ((.Values.beta).rollout).strategy -}}
+  {{ if ((.Values).rollout).strategy -}}
     strategy:
-{{ toYaml .Values.beta.rollout.strategy | indent 4 }}
+{{ toYaml .Values.rollout.strategy | indent 4 }}
   {{ end -}}
   revisionHistoryLimit: 5
   selector:
