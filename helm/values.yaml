@@ -19,7 +19,8 @@ service:
         periodSeconds: 5
       readiness:
         initialDelaySeconds: 15
-        periodSeconds: 5
+        periodSeconds: 15
+        timeoutSeconds: 10
 annotations: {}
 resources:
   limits:

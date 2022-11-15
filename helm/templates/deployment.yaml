@@ -86,4 +86,5 @@ spec:
             port: {{ .Values.service.http.port }} 
           initialDelaySeconds: {{ .Values.service.http.healthCheck.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.service.http.healthCheck.readiness.periodSeconds }}
+          timeoutSeconds: {{ .Values.service.http.healthCheck.readiness.timeoutSeconds }}
         {{ end -}}
