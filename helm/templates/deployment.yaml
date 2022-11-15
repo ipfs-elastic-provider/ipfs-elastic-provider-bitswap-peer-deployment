@@ -29,43 +29,11 @@ spec:
       containers:
       - image: ghcr.io/elastic-ipfs/bitswap-peer/app:{{ .Values.image.version }}
         name: {{ .Release.Name }}        
-        env: 
-        - name: PORT
-          value: {{ .Values.service.targetPort | squote }} 
-        - name: NODE_ENV
-          value: {{ .Values.env.nodeEnv }}        
-        - name: LOG_LEVEL
-          value: {{ .Values.env.logLevel }}     
-        - name: PEER_ID_S3_BUCKET
-          value: {{ .Values.env.peerIdS3Bucket }}
-        - name: PEER_ID_FILE
-          value: {{ .Values.env.peerIdFileName }}
-        - name: CACHE_BLOCK_DATA
-          value: {{ .Values.env.cacheBlockData | squote }}
-        - name: CACHE_BLOCK_INFO
-          value: {{ .Values.env.cacheBlockInfo | squote }}
-        - name: PEER_ANNOUNCE_ADDR
-          value: {{ .Values.env.peerAnnounceAddr | squote }}
-        - name: CONCURRENCY
-          value: {{ .Values.env.concurrency | squote }}
-        - name: PIPELINING
-          value: {{ .Values.env.pipelining | squote }}
-        - name: DYNAMO_BLOCKS_TABLE
-          value: {{ .Values.env.dynamodbBlocksTable | squote }}
-        - name: DYNAMO_CARS_TABLE
-          value: {{ .Values.env.dynamodbCarsTable | squote }}
-        {{ if ((.Values.env).dynamodbBlocksTableV1) -}}
-        - name: DYNAMO_BLOCKS_TABLE_V1
-          value: {{ .Values.env.dynamodbBlocksTableV1 | squote }}
-        {{ end -}}
-        {{ if ((.Values.env).dynamodbCarsTableV1) -}}
-        - name: DYNAMO_CARS_TABLE_V1
-          value: {{ .Values.env.dynamodbCarsTableV1 | squote }}
-        {{ end -}}
-        {{ if ((.Values.env).dynamodbLinkTableV1) -}}
-        - name: DYNAMO_LINK_TABLE_V1
-          value: {{ .Values.env.dynamodbLinkTableV1 | squote }}
-        {{ end -}}
+        env: ## TODO: Find out if possible doing without 'range' through array
+        {{- range .Values.env }}
+        - name: {{ .name }}
+          value: {{ .value }}
+        {{- end }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
