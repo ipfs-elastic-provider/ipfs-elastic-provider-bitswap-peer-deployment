@@ -29,8 +29,10 @@ spec:
       containers:
       - image: ghcr.io/elastic-ipfs/bitswap-peer/app:{{ .Values.image.version }}
         name: {{ .Release.Name }}        
-        env: ## TODO: Find out if possible doing without 'range' through array
-        {{- range .Values.env }}
+        env: 
+        - name: PORT
+          value: {{ .Values.service.targetPort | squote }} 
+        {{- range .Values.env }} ## TODO: Find out if possible doing without 'range' through array
         - name: {{ .name }}
           value: {{ .value }}
         {{- end }}
