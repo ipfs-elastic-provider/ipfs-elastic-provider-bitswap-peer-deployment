@@ -47,9 +47,9 @@ spec:
         - name: PEER_ANNOUNCE_ADDR
           value: {{ .Values.env.peerAnnounceAddr | squote }}
         - name: AWS_CLIENT_CONCURRENCY
-          values: {{ .Values.env.awsClientPipelining | squote }}
+          value: {{ .Values.env.awsClientPipelining | squote }}
         - name: AWS_CLIENT_PIPELINING
-          values: {{ .Values.env.awsClientConcurrency | squote }}
+          value: {{ .Values.env.awsClientConcurrency | squote }}
         - name: DYNAMO_BLOCKS_TABLE
           value: {{ .Values.env.dynamodbBlocksTable | squote }}
         - name: DYNAMO_CARS_TABLE
