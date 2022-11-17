@@ -9,6 +9,7 @@ metadata:
   annotations:
     service.beta.kubernetes.io/aws-load-balancer-ssl-cert: {{ .Values.service.awsCertificateArn }}
     service.beta.kubernetes.io/aws-load-balancer-ssl-ports: wss
+    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: "testtag=yes,testtag2=yes"
   {{- end }}
 spec:
   type: LoadBalancer
