@@ -21,6 +21,12 @@ service:
         initialDelaySeconds: 15
         periodSeconds: 15
         timeoutSeconds: 10
+  additionalResourceTags:
+    Team: NearForm
+    Project: Elastic IPFS
+    Repository: 'https://github.com/elastic-ipfs/bitswap-peer-deployment'
+    Stack: 'peer-kubernetes-components'
+    ManagedBy: Kubernetes
 annotations: {}
 resources:
   limits:

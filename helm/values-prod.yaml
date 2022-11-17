@@ -7,6 +7,9 @@ resources:
   requests:
     cpu: 4
     memory: 6Gi
+service:
+  additionalResourceTags:
+    Environment: production
 autoscaling:
   enabled: true
   minReplicas: 10
