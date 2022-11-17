@@ -87,4 +87,5 @@ spec:
           initialDelaySeconds: {{ .Values.service.http.healthCheck.readiness.initialDelaySeconds }}
           periodSeconds: {{ .Values.service.http.healthCheck.readiness.periodSeconds }}
           timeoutSeconds: {{ .Values.service.http.healthCheck.readiness.timeoutSeconds }}
+          failureThreshold: {{ .Values.service.http.healthCheck.readiness.failureThreshold }}
         {{ end -}}
