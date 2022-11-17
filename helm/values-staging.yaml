@@ -1,10 +1,18 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "0.6.2"
+  version: '0.6.2'
 annotations:
   prometheus.io/path: metrics
-  prometheus.io/port: "3001"
-  prometheus.io/scrape: "true"
+  prometheus.io/port: '3001'
+  prometheus.io/scrape: 'true'
+service:
+  additionalResourceTags:
+    Team: NearForm
+    Project: Elastic IPFS
+    Repository: 'https://github.com/elastic-ipfs/bitswap-peer-deployment'
+    Environment: staging
+    Stack: 'peer-kubernetes-components'
+    ManagedBy: Kubernetes
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config
