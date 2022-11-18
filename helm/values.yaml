@@ -19,8 +19,9 @@ service:
         periodSeconds: 5
       readiness:
         initialDelaySeconds: 15
-        periodSeconds: 15
+        periodSeconds: 12
         timeoutSeconds: 10
+        failureThreshold: 10
   additionalResourceTags:
     Team: NearForm
     Project: Elastic IPFS
