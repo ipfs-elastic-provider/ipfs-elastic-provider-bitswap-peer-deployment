@@ -1,10 +1,13 @@
 namespace: staging-ep-bitswap-peer
 image:
-  version: "0.6.2"
+  version: '0.6.2'
 annotations:
   prometheus.io/path: metrics
-  prometheus.io/port: "3001"
-  prometheus.io/scrape: "true"
+  prometheus.io/port: '3001'
+  prometheus.io/scrape: 'true'
+service:
+  additionalResourceTags:
+    Environment: staging
 env:
   nodeEnv: staging
   peerIdS3Bucket: us-west-2-staging-ep-bitswap-config

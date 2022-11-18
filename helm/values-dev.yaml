@@ -7,6 +7,8 @@ service:
       enable: false
     healthCheck:
       enable: false
+  additionalResourceTags:
+    Environment: dev
 annotations:
   prometheus.io/path: metrics
   prometheus.io/port: "3001"
