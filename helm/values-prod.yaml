@@ -9,7 +9,7 @@ resources:
     memory: 6Gi
 service:
   additionalResourceTags:
-    Environment: production
+    Environment: prod
 autoscaling:
   enabled: true
   minReplicas: 10
