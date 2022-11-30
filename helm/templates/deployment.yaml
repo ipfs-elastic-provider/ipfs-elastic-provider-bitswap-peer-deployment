@@ -66,6 +66,10 @@ spec:
         - name: DYNAMO_LINK_TABLE_V1
           value: {{ .Values.env.dynamodbLinkTableV1 | squote }}
         {{ end -}}
+        {{ if ((.Values.env).dynamodbConfigTable) -}}
+        - name: DYNAMO_CONFIG_TABLE
+          value: {{ .Values.env.dynamodbConfigTable | squote }}
+        {{ end -}}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
