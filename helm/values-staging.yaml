@@ -17,4 +17,5 @@ env:
   dynamodbBlocksTableV1: staging-ep-v1-blocks
   dynamodbCarsTableV1: staging-ep-v1-cars
   dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
+  dynamodbConfigTable: staging-ep-bitswap-config
 serviceAccountName: staging-ep-bitswap-irsa

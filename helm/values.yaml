@@ -57,5 +57,6 @@ env:
   dynamodbBlocksTableV1: prod-ep-v1-blocks
   dynamodbCarsTableV1: prod-ep-v1-cars
   dynamodbLinkTableV1: prod-ep-v1-blocks-cars-position
+  dynamodbConfigTable: prod-ep-bitswap-config
 workerType: workerNode
 serviceAccountName: bitswap-irsa
