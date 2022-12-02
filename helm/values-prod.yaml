@@ -1,5 +1,5 @@
 image:
-  version: '0.10.0'
+  version: '0.5.3'
 resources:
   limits:
     cpu: 4
