@@ -12,8 +12,8 @@ service:
     Environment: prod
 autoscaling:
   enabled: true
-  minReplicas: 30
-  maxReplicas: 40
+  minReplicas: 20
+  maxReplicas: 30
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
 rollout:
