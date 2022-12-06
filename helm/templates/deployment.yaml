@@ -26,6 +26,7 @@ spec:
         workerType: {{ .Values.workerType }}
     spec:
       serviceAccountName: {{ .Values.serviceAccountName }}
+      imagePullPolicy: Always
       containers:
       - image: ghcr.io/elastic-ipfs/bitswap-peer/app:{{ .Values.image.version }}
         name: {{ .Release.Name }}        
