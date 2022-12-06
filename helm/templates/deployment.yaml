@@ -28,6 +28,7 @@ spec:
       serviceAccountName: {{ .Values.serviceAccountName }}
       containers:
       - image: ghcr.io/elastic-ipfs/bitswap-peer/app:{{ .Values.image.version }}
+        imagePullPolicy: Always
         name: {{ .Release.Name }}        
         env: 
         - name: PORT
