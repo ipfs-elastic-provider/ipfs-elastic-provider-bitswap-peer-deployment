@@ -18,6 +18,7 @@ service:
         periodSeconds: 12
         timeoutSeconds: 10
         failureThreshold: 10
+        successThreshold: 1
   additionalResourceTags:
     Environment: dev
 annotations:
