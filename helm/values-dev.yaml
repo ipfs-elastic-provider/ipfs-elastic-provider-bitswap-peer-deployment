@@ -24,5 +24,16 @@ env:
   dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
   dynamodbConfigTable: dev-ep-bitswap-config
 serviceAccountName: dev-ep-bitswap-irsa
+resources:
+  limits:
+    cpu: 2
+    memory: 6Gi
+  requests:
+    cpu: 1
+    memory: 4Gi
 autoscaling:
-  enabled: false
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 20
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 70
