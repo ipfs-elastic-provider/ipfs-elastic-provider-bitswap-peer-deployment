@@ -10,6 +10,9 @@ service:
       liveness: 
         initialDelaySeconds: 15
         periodSeconds: 5
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
       readiness:
         initialDelaySeconds: 15
         periodSeconds: 12
