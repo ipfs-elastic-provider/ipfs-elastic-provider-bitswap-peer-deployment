@@ -6,7 +6,15 @@ service:
     metricsMonitor:
       enable: false
     healthCheck:
-      enable: false
+      enable: "true"
+      liveness: 
+        initialDelaySeconds: 15
+        periodSeconds: 5
+      readiness:
+        initialDelaySeconds: 15
+        periodSeconds: 12
+        timeoutSeconds: 10
+        failureThreshold: 10
   additionalResourceTags:
     Environment: dev
 annotations:
