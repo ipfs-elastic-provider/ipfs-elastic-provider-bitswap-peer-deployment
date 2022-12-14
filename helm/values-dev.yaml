@@ -6,7 +6,19 @@ service:
     metricsMonitor:
       enable: false
     healthCheck:
-      enable: false
+      enable: "true"
+      liveness: 
+        initialDelaySeconds: 15
+        periodSeconds: 5
+        timeoutSeconds: 1
+        failureThreshold: 3
+        successThreshold: 1
+      readiness:
+        initialDelaySeconds: 15
+        periodSeconds: 12
+        timeoutSeconds: 10
+        failureThreshold: 10
+        successThreshold: 1
   additionalResourceTags:
     Environment: dev
 annotations:
@@ -24,5 +36,16 @@ env:
   dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
   dynamodbConfigTable: dev-ep-bitswap-config
 serviceAccountName: dev-ep-bitswap-irsa
+resources:
+  limits:
+    cpu: 2
+    memory: 6Gi
+  requests:
+    cpu: 1
+    memory: 4Gi
 autoscaling:
-  enabled: false
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 15
+  targetCPUUtilizationPercentage: 70
+  targetMemoryUtilizationPercentage: 70
