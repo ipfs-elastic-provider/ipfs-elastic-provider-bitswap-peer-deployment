@@ -1,13 +1,13 @@
 namespace: dev-ep-bitswap-peer
 image:
-  version: 0.14.0-dev
+  version: 20221223.1659-dev
 service:
   http:
     metricsMonitor:
       enable: false
     healthCheck:
       enable: "true"
-      liveness: 
+      liveness:
         initialDelaySeconds: 15
         periodSeconds: 5
         timeoutSeconds: 1
