@@ -2,11 +2,11 @@ image:
   version: '0.14.0'
 resources:
   limits:
-    cpu: 4
-    memory: 7Gi
-  requests:
     cpu: 2
     memory: 6Gi
+  requests:
+    cpu: 500m
+    memory: 3Gi
 service:
   additionalResourceTags:
     Environment: prod
