@@ -1,6 +1,6 @@
 namespace: dev-ep-bitswap-peer
 image:
-  version: 20230120.0944-dev
+  version: 20230126.1329-dev
 service:
   http:
     metricsMonitor:
