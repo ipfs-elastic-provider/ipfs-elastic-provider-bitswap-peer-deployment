@@ -35,6 +35,7 @@ env:
   dynamodbCarsTableV1: dev-ep-v1-cars
   dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
   dynamodbConfigTable: dev-ep-bitswap-config
+  logRequests: true
 serviceAccountName: dev-ep-bitswap-irsa
 resources:
   limits:
