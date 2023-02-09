@@ -71,6 +71,10 @@ spec:
         - name: DYNAMO_CONFIG_TABLE
           value: {{ .Values.env.dynamodbConfigTable | squote }}
         {{ end -}}
+        {{ if ((.Values.env).logRequests) -}}
+        - name: LOG_REQUESTS
+          value: {{ .Values.env.logRequests | squote }}
+        {{ end -}}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
