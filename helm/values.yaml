@@ -58,5 +58,6 @@ env:
   dynamodbCarsTableV1: prod-ep-v1-cars
   dynamodbLinkTableV1: prod-ep-v1-blocks-cars-position
   dynamodbConfigTable: prod-ep-bitswap-config
+  p2pConnectionMaxConnections: 1000
 workerType: workerNode
 serviceAccountName: bitswap-irsa

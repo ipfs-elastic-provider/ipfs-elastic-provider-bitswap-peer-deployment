@@ -75,6 +75,8 @@ spec:
         - name: LOG_REQUESTS
           value: {{ .Values.env.logRequests | squote }}
         {{ end -}}
+        - name: P2P_CONNECTION_MAX_CONNECTIONS
+          value: {{ .Values.env.p2pConnectionMaxConnections | squote }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
