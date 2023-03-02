@@ -16,8 +16,8 @@ service:
       enable: "true"
       liveness: 
         initialDelaySeconds: 15
-        periodSeconds: 10
-        timeoutSeconds: 5
+        periodSeconds: 30
+        timeoutSeconds: 10
       readiness:
         initialDelaySeconds: 15
         periodSeconds: 12
