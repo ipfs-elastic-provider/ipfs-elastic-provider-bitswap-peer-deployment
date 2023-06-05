@@ -2,11 +2,11 @@ image:
   version: '20230602.1121'
 resources:
   limits:
-    cpu: 4
+    cpu: 3
     memory: 7Gi
   requests:
     cpu: 2
-    memory: 6Gi
+    memory: 4Gi
 service:
   additionalResourceTags:
     Environment: prod
@@ -16,8 +16,8 @@ annotations:
   prometheus.io/scrape: "true"
 autoscaling:
   enabled: true
-  minReplicas: 40
-  maxReplicas: 50
+  minReplicas: 20
+  maxReplicas: 60
   targetCPUUtilizationPercentage: 70
   targetMemoryUtilizationPercentage: 90
 rollout:
