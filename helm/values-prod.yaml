@@ -2,10 +2,10 @@ image:
   version: '20230602.1121'
 resources:
   limits:
-    cpu: 3
+    cpu: 2
     memory: 7Gi
   requests:
-    cpu: 2
+    cpu: 0.5
     memory: 4Gi
 service:
   additionalResourceTags:
@@ -18,8 +18,8 @@ autoscaling:
   enabled: true
   minReplicas: 20
   maxReplicas: 60
-  targetCPUUtilizationPercentage: 70
-  targetMemoryUtilizationPercentage: 90
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 80
 rollout:
   strategy:
     canary:
@@ -28,7 +28,3 @@ rollout:
         - pause: {}
         - setWeight: 40
         - pause: {}
-        - setWeight: 60
-        - pause: { duration: 10 }
-        - setWeight: 80
-        - pause: { duration: 10 }
