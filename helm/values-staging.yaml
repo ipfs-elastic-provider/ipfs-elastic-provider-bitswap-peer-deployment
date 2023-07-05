@@ -18,4 +18,5 @@ env:
   dynamodbCarsTableV1: staging-ep-v1-cars
   dynamodbLinkTableV1: staging-ep-v1-blocks-cars-position
   dynamodbConfigTable: staging-ep-bitswap-config
+  denylistUrl: https://denylist-staging.dag.haus
 serviceAccountName: staging-ep-bitswap-irsa
