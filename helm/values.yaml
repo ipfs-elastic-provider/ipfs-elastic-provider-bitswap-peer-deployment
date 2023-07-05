@@ -60,5 +60,6 @@ env:
   dynamodbLinkTableV1: prod-ep-v1-blocks-cars-position
   dynamodbConfigTable: prod-ep-bitswap-config
   p2pConnectionMaxConnections: 5000
+  denylistUrl: https://denylist-staging.dag.haus
 workerType: workerNode
 serviceAccountName: bitswap-irsa

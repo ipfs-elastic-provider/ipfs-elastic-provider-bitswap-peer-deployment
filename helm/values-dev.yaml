@@ -36,6 +36,7 @@ env:
   dynamodbLinkTableV1: dev-ep-v1-blocks-cars-position
   dynamodbConfigTable: dev-ep-bitswap-config
   logRequests: true
+  denylistUrl: https://denylist-staging.dag.haus
 serviceAccountName: dev-ep-bitswap-irsa
 resources:
   limits:

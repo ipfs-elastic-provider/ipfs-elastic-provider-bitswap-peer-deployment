@@ -77,6 +77,8 @@ spec:
         {{ end -}}
         - name: P2P_CONNECTION_MAX_CONNECTIONS
           value: {{ .Values.env.p2pConnectionMaxConnections | squote }}
+        - name: DENYLIST_URL
+          value: {{ .Values.env.denylistUrl | squote }}
         resources:
           limits:
             cpu: {{ .Values.resources.limits.cpu }}
