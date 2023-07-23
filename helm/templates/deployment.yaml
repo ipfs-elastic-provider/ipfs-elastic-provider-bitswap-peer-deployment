@@ -45,6 +45,8 @@ spec:
           value: {{ .Values.env.cacheBlockData | squote }}
         - name: CACHE_BLOCK_INFO
           value: {{ .Values.env.cacheBlockInfo | squote }}
+        - name: CACHE_BLOCK_INFO_SIZE
+          value: {{ .Values.env.cacheBlockInfoSize | squote }}
         - name: PEER_ANNOUNCE_ADDR
           value: {{ .Values.env.peerAnnounceAddr | squote }}
         - name: AWS_CLIENT_CONCURRENCY
