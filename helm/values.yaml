@@ -53,7 +53,7 @@ env:
   logLevel: info
   cacheBlockData: false
   cacheBlockInfo: true
-  cacheBlockInfoSize: 50000 # ~300b for an index item * 50k = ~15Mib (node get 3Gib)
+  cacheBlockInfoSize: 70000 # ~300b for an index item * 50k = ~20Mib (node get 3Gib)
   dynamodbBlocksTable: blocks
   dynamodbCarsTable: cars
   dynamodbBlocksTableV1: prod-ep-v1-blocks
