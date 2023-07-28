@@ -16,7 +16,7 @@ annotations:
   prometheus.io/scrape: "true"
 autoscaling:
   enabled: true
-  minReplicas: 68
+  minReplicas: 1
   maxReplicas: 72
   targetCPUUtilizationPercentage: 40
   targetMemoryUtilizationPercentage: 40
