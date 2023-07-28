@@ -17,7 +17,7 @@ annotations:
 autoscaling:
   enabled: true
   minReplicas: 1
-  maxReplicas: 4
+  maxReplicas: 72
   targetCPUUtilizationPercentage: 40
   targetMemoryUtilizationPercentage: 40
 rollout:
