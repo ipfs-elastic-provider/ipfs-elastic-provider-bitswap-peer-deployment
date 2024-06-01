@@ -15,10 +15,10 @@ service:
         successThreshold: 1
       readiness:
         initialDelaySeconds: 15
-        periodSeconds: 12
-        timeoutSeconds: 10
-        failureThreshold: 10
-        successThreshold: 1
+        periodSeconds: 1
+        timeoutSeconds: 1
+        failureThreshold: 1
+        successThreshold: 3
   additionalResourceTags:
     Environment: dev
 annotations:
